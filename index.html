@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ryvet Krishna | Graphic Designer & Video Editor</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
 
@@ -18,89 +22,94 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0b0b0f;
+background:#050509;
 color:white;
 overflow-x:hidden;
 }
 
+/* PARTICLES BACKGROUND */
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* NAVBAR */
+
 nav{
 position:fixed;
-top:0;
 width:100%;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
-padding:20px 8%;
 background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 z-index:1000;
 }
 
 nav h1{
-font-size:22px;
 color:#7c5cff;
+font-weight:700;
 }
 
 nav ul{
 display:flex;
-gap:25px;
+gap:30px;
 list-style:none;
 }
 
-nav ul li a{
+nav a{
 text-decoration:none;
 color:white;
 transition:.3s;
 }
 
-nav ul li a:hover{
+nav a:hover{
 color:#7c5cff;
 }
+
+/* HERO */
 
 .hero{
 height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
-url("https://images.unsplash.com/photo-1608889176561-90a7e92c6d0b");
-background-size:cover;
-background-position:center;
 }
 
 .hero h2{
-font-size:55px;
+font-size:60px;
 letter-spacing:3px;
-animation:fade 2s ease;
 }
 
 .hero p{
-margin-top:15px;
-font-size:18px;
+margin-top:10px;
 opacity:.8;
+font-size:18px;
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(50px);}
-to{opacity:1;transform:translateY(0);}
-}
+/* SECTIONS */
 
 .section{
 padding:120px 10%;
 }
 
+/* ABOUT */
+
 .about{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:40px;
+gap:50px;
 align-items:center;
 }
 
 .about img{
 width:100%;
 border-radius:20px;
-box-shadow:0 0 30px rgba(124,92,255,.4);
+box-shadow:0 0 40px rgba(124,92,255,.7);
 transition:.5s;
 }
 
@@ -108,115 +117,274 @@ transition:.5s;
 transform:scale(1.05);
 }
 
-.card{
+.about-card{
 background:rgba(255,255,255,.05);
-padding:30px;
+padding:40px;
 border-radius:20px;
-backdrop-filter:blur(15px);
-box-shadow:0 10px 30px rgba(0,0,0,.5);
-transition:.4s;
+backdrop-filter:blur(20px);
+box-shadow:0 10px 30px rgba(0,0,0,.6);
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(124,92,255,.5);
+/* PROJECT GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
 }
 
-.info{
+.project{
+height:220px;
+border-radius:20px;
+background:linear-gradient(145deg,#12121a,#08080f);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:600;
+transition:all .4s;
+transform-style:preserve-3d;
+cursor:pointer;
+}
+
+.project:hover{
+transform:rotateY(12deg) rotateX(12deg) scale(1.05);
+box-shadow:0 20px 40px rgba(124,92,255,.6);
+}
+
+/* CONTACT */
+
+.contact{
+max-width:700px;
+margin:auto;
+background:rgba(255,255,255,.05);
+padding:50px;
+border-radius:20px;
+backdrop-filter:blur(20px);
+text-align:center;
+}
+
+button{
 margin-top:20px;
-line-height:1.8;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#7c5cff;
+color:white;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
 }
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 10px 20px rgba(124,92,255,.6);
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
 padding:40px;
-opacity:.6;
+opacity:.5;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.about{
+grid-template-columns:1fr;
+}
+
+.hero h2{
+font-size:40px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
+<div id="particles-js"></div>
+
+<!-- NAVBAR -->
+
 <nav>
+
 <h1>Ryvet Krishna</h1>
+
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </nav>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
+
 <div>
+
 <h2>Ryvet Krishna</h2>
 <p>Graphic Designer • Video Editor</p>
+
 </div>
+
 </section>
 
-<section class="section about" id="about">
+<!-- ABOUT -->
 
-<img src="https://wallpapercave.com/wp/wp9046404.jpg" alt="Anime sad broken boy">
+<section class="section about reveal" id="about">
 
-<div class="card">
+<img src="https://wallpapercave.com/wp/wp10446366.jpg" alt="Anime sad boy">
+
+<div class="about-card">
+
 <h2>About Me</h2>
 
-<div class="info">
+<p style="margin-top:20px;line-height:1.7">
 
-<p><b>Name:</b> Ryvet Krishna</p>
+Hello, I'm <b>Ryvet Krishna</b>, a passionate graphic designer and video editor based in <b>Thrissur, Kerala</b>.  
+I specialize in cinematic visuals, anime-inspired digital art, social media graphics, and modern video editing.
 
-<p><b>Place:</b> Thrissur, Kerala</p>
+My goal is to craft powerful visuals that combine creativity, storytelling, and modern design aesthetics.
 
-<p><b>Profession:</b> Graphic Designer & Video Editor</p>
+</p>
 
-<p><b>Contact:</b> +91 96338 92637</p>
+<p style="margin-top:20px">
 
-<p><b>Email:</b> ryvetdesigns@gmail.com</p>
+📍 Thrissur, Kerala  
+📞 +91 96338 92637  
+📧 ryvetdesigns@gmail.com
 
-<p>I create cinematic designs, anime themed visuals, and professional video edits with modern digital aesthetics.</p>
-
-</div>
-</div>
-
-</section>
-
-<section class="section" id="contact">
-
-<div class="card">
-
-<h2>Contact Me</h2>
-
-<p style="margin-top:20px">If you want design or editing work feel free to contact me.</p>
-
-<p class="info">
-Phone: +91 96338 92637 <br>
-Email: ryvetdesigns@gmail.com
 </p>
 
 </div>
 
 </section>
 
+<!-- PROJECTS -->
+
+<section class="section reveal" id="projects">
+
+<h2>Projects</h2>
+
+<div class="gallery">
+
+<div class="project">Poster Design</div>
+<div class="project">Anime Edit</div>
+<div class="project">Brand Logo</div>
+<div class="project">Video Editing</div>
+<div class="project">Social Media Design</div>
+<div class="project">Cinematic Edit</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section reveal" id="contact">
+
+<div class="contact">
+
+<h2>Contact Me</h2>
+
+<p style="margin-top:15px">
+
+Available for freelance graphic design and video editing projects.
+
+</p>
+
+<a href="mailto:ryvetdesigns@gmail.com">
+
+<button>Email Me</button>
+
+</a>
+
+<br>
+
+<a href="RyvetKrishna.vcf" download>
+
+<button>Download VCard</button>
+
+</a>
+
+</div>
+
+</section>
+
 <footer>
-© 2026 Ryvet Krishna — Portfolio
+
+© 2026 Ryvet Krishna
+
 </footer>
 
 <script>
 
-const cards=document.querySelectorAll(".card");
+/* PARTICLES BACKGROUND */
 
-window.addEventListener("scroll",()=>{
+particlesJS("particles-js",{
 
-cards.forEach(card=>{
-let top=card.getBoundingClientRect().top;
+particles:{
 
-if(top<window.innerHeight-100){
-card.style.opacity="1";
-card.style.transform="translateY(0)";
+number:{value:80},
+
+size:{value:3},
+
+color:{value:"#7c5cff"},
+
+line_linked:{enable:true,color:"#7c5cff"},
+
+move:{speed:2}
+
 }
-});
 
 });
+
+/* SCROLL ANIMATION */
+
+function reveal(){
+
+let reveals=document.querySelectorAll(".reveal");
+
+for(let i=0;i<reveals.length;i++){
+
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+let elementVisible=100;
+
+if(elementTop<windowHeight-elementVisible){
+
+reveals[i].classList.add("active");
+
+}
+
+}
+
+}
+
+window.addEventListener("scroll",reveal);
 
 </script>
 
