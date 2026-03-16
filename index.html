@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryvet Krishna | Graphic Designer & Video Editor</title>
 
-<title>Athul Krishna | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,217 +18,119 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0c0c0c;
-color:#fff;
+background:#0b0b0f;
+color:white;
+overflow-x:hidden;
 }
 
-/* NAVBAR */
-
 nav{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:25px 8%;
-border-bottom:1px solid #222;
-position:sticky;
-top:0;
-background:#0c0c0c;
+padding:20px 8%;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 nav h1{
-font-size:18px;
-letter-spacing:2px;
+font-size:22px;
+color:#7c5cff;
 }
 
 nav ul{
 display:flex;
-gap:30px;
+gap:25px;
 list-style:none;
 }
 
-nav a{
-color:#aaa;
+nav ul li a{
 text-decoration:none;
-font-size:14px;
+color:white;
 transition:.3s;
 }
 
-nav a:hover{
-color:#fff;
+nav ul li a:hover{
+color:#7c5cff;
 }
 
-/* HERO */
-
 .hero{
-height:80vh;
+height:100vh;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+url("https://images.unsplash.com/photo-1608889176561-90a7e92c6d0b");
+background-size:cover;
+background-position:center;
 }
 
 .hero h2{
 font-size:55px;
-font-weight:700;
-}
-
-.hero span{
-color:#00ffb3;
+letter-spacing:3px;
+animation:fade 2s ease;
 }
 
 .hero p{
 margin-top:15px;
-color:#aaa;
-max-width:550px;
+font-size:18px;
+opacity:.8;
 }
 
-/* SERVICES */
-
-.services{
-padding:100px 8%;
-text-align:center;
-background:#111;
+@keyframes fade{
+from{opacity:0;transform:translateY(50px);}
+to{opacity:1;transform:translateY(0);}
 }
 
-.services h2{
-font-size:38px;
-margin-bottom:50px;
+.section{
+padding:120px 10%;
 }
 
-.service-grid{
+.about{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 }
 
-.service{
-background:#151515;
-padding:35px;
-border-radius:10px;
-transition:.3s;
+.about img{
+width:100%;
+border-radius:20px;
+box-shadow:0 0 30px rgba(124,92,255,.4);
+transition:.5s;
 }
 
-.service:hover{
-transform:translateY(-10px);
-background:#1c1c1c;
-}
-
-.service p{
-color:#aaa;
-font-size:14px;
-}
-
-/* PORTFOLIO */
-
-.portfolio{
-padding:100px 8%;
-}
-
-.portfolio h2{
-text-align:center;
-font-size:40px;
-margin-bottom:60px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+.about img:hover{
+transform:scale(1.05);
 }
 
 .card{
-position:relative;
-overflow:hidden;
-border-radius:12px;
-}
-
-.card img{
-width:100%;
-display:block;
-transition:transform .6s;
-}
-
-.card:hover img{
-transform:scale(1.1);
-}
-
-.overlay{
-position:absolute;
-bottom:0;
-width:100%;
-padding:20px;
-background:linear-gradient(transparent,black);
-opacity:0;
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(15px);
+box-shadow:0 10px 30px rgba(0,0,0,.5);
 transition:.4s;
 }
 
-.card:hover .overlay{
-opacity:1;
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(124,92,255,.5);
 }
 
-.overlay h3{
-font-size:18px;
+.info{
+margin-top:20px;
+line-height:1.8;
 }
-
-/* ABOUT */
-
-.about{
-padding:100px 8%;
-text-align:center;
-background:#111;
-}
-
-.about h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-.about p{
-max-width:650px;
-margin:auto;
-color:#aaa;
-}
-
-/* CONTACT */
-
-.contact{
-padding:100px 8%;
-text-align:center;
-}
-
-.contact h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-.contact p{
-color:#aaa;
-margin:10px 0;
-}
-
-/* FOOTER */
 
 footer{
-background:#111;
 text-align:center;
-padding:30px;
-color:#777;
-margin-top:40px;
-}
-
-/* ANIMATION */
-
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
+padding:40px;
+opacity:.6;
 }
 
 </style>
@@ -238,143 +139,84 @@ transform:translateY(0);
 <body>
 
 <nav>
-
-<h1>ATHUL KRISHNA</h1>
-
+<h1>Ryvet Krishna</h1>
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-
 </nav>
 
-
-<section class="hero fade">
-
-<h2>Graphic Designer & <span>Video Editor</span></h2>
-
-<p>
-Creating modern posters, cinematic video edits,
-food advertisements and branding visuals for businesses.
-</p>
-
+<section class="hero" id="home">
+<div>
+<h2>Ryvet Krishna</h2>
+<p>Graphic Designer • Video Editor</p>
+</div>
 </section>
 
+<section class="section about" id="about">
 
-<section class="services fade" id="services">
-
-<h2>Services</h2>
-
-<div class="service-grid">
-
-<div class="service">
-<h3>Graphic Design</h3>
-<p>
-Posters, social media creatives, food advertisements,
-branding visuals and marketing designs.
-</p>
-</div>
-
-<div class="service">
-<h3>Video Editing</h3>
-<p>
-Cinematic edits, reels editing, YouTube content
-and promotional videos.
-</p>
-</div>
-
-<div class="service">
-<h3>Social Media Design</h3>
-<p>
-Instagram posts, business promotion graphics
-and creative marketing visuals.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="portfolio fade" id="portfolio">
-
-<h2>My Works</h2>
-
-<div class="grid">
+<img src="https://wallpapercave.com/wp/wp9046404.jpg" alt="Anime sad broken boy">
 
 <div class="card">
-<img src="icecream.jpg">
-<div class="overlay">
-<h3>Pistachio Ice Cream Poster</h3>
-</div>
-</div>
-
-<div class="card">
-<img src="coffee.jpg">
-<div class="overlay">
-<h3>Coffee Advertisement</h3>
-</div>
-</div>
-
-<div class="card">
-<img src="biriyani.jpg">
-<div class="overlay">
-<h3>Biriyani Food Poster</h3>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="about fade">
-
 <h2>About Me</h2>
 
-<p>
-Hi, I'm Athul Krishna from Thrissur, Kerala.
-I am a graphic designer and video editor specializing in
-poster design, food advertisements, social media creatives,
-branding visuals and cinematic edits.
+<div class="info">
+
+<p><b>Name:</b> Ryvet Krishna</p>
+
+<p><b>Place:</b> Thrissur, Kerala</p>
+
+<p><b>Profession:</b> Graphic Designer & Video Editor</p>
+
+<p><b>Contact:</b> +91 96338 92637</p>
+
+<p><b>Email:</b> ryvetdesigns@gmail.com</p>
+
+<p>I create cinematic designs, anime themed visuals, and professional video edits with modern digital aesthetics.</p>
+
+</div>
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<div class="card">
+
+<h2>Contact Me</h2>
+
+<p style="margin-top:20px">If you want design or editing work feel free to contact me.</p>
+
+<p class="info">
+Phone: +91 96338 92637 <br>
+Email: ryvetdesigns@gmail.com
 </p>
 
-</section>
-
-
-<section class="contact fade" id="contact">
-
-<h2>Contact</h2>
-
-<p>📍 Thrissur, Kerala</p>
-<p>📞 +91 96338 92637</p>
-<p>📧 ryvetdesigns@gmail.com</p>
+</div>
 
 </section>
-
 
 <footer>
-
-© 2026 Athul Krishna Portfolio
-
+© 2026 Ryvet Krishna — Portfolio
 </footer>
-
 
 <script>
 
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add("show")
-}
-})
-})
+const cards=document.querySelectorAll(".card");
 
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el)
-})
+window.addEventListener("scroll",()=>{
+
+cards.forEach(card=>{
+let top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+}
+});
+
+});
 
 </script>
 
